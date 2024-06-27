@@ -1,0 +1,127 @@
+.login-form{
+    color: #212B36; 
+    max-width: 382px;
+    form{
+        display: flex;
+        flex-direction: column;
+        .forgot-pwd{
+            font-size: 14px;
+            text-align: right;
+            text-decoration: underline;
+            margin: 11px 16px;
+            cursor:pointer;
+        }
+    }
+    .login-info{
+        padding: 16px;
+        margin: 8px 16px;
+        background: #CAFDF5;
+        border-radius: 8px;
+        display: flex;
+        column-gap: 16px;
+        span{
+            svg{
+                font-size: 24px;
+                color: #00B8D9;
+            }
+        }
+        p{
+            font-size: 14px;
+            line-height: 22px;
+            span{
+                font-weight: 700;
+                font-size: 14px;
+            }
+        }
+    }
+    .form-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 16px;
+        padding-bottom: 43px; 
+        div{
+            display: flex;
+            flex-direction: column;
+            row-gap: 24px;
+            h3{
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 36px;
+            }
+            p{
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 22px;
+                span{
+                    font-size: 14px;
+                    font-weight: 600;
+                    line-height: 22px;
+                    color: #00AB55;
+                }
+            }
+        }
+        img{
+            width: 32px;
+        }
+    }
+
+    .sso-buttons{
+        margin: 8px 16px;
+        .separator{
+            position: relative;
+            margin-top: 8px;
+            p{
+                color: #919EAB;
+                text-align: center;
+                font-size: 12px;
+                font-weight: 700;
+                line-height: 18px;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    width: Calc(50% - 24px);
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 0;
+                    height: 1px;
+                    background: #919EAB3D;
+                }
+                &::after{
+                    content: '';
+                    position: absolute;
+                    width: Calc(50% - 24px);
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 0;
+                    height: 1px;
+                    background: #919EAB3D;
+                }
+            }
+        }
+        .social-buttons{
+            margin: 36px auto;
+            display: flex;
+            justify-content: center;
+            span:nth-child(1){
+                svg{
+                    color: #DF3E30;
+                    font-size: 20px;
+                }
+            }
+            span:nth-child(2){
+                svg{
+                    color: #212B36;
+                    font-size: 20px;
+                    margin: 0 48px;
+                }
+            }
+            span:nth-child(3){
+                svg{
+                    color: #1C9CEA;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}

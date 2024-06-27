@@ -1,0 +1,115 @@
+@import "@fontsource/public-sans/800.css";
+@import "@fontsource/public-sans/700.css";
+@import "@fontsource/public-sans/600.css";
+@import "@fontsource/public-sans/500.css";
+@import "@fontsource/public-sans/400.css";
+@import "@fontsource/inter";
+@import "@fontsource/barlow";
+@import "@fontsource/barlow/800.css";
+@import "@fontsource/barlow/700.css";
+@import "@fontsource/barlow/600.css";
+@import "@fontsource/barlow/500.css";
+@import "@fontsource/barlow/400.css";
+// :root {
+//   //color palettes
+//   --primary-color: #ea7768;
+//   --primary-dark-color: #ea7768;
+//   --secondary-color: #535bf2;
+//   --secondary-dark-color: #616d78;
+//   --tertiary-color: #bad2ea;
+//   --tertiary-dark-color: #ccdceb;
+//   --background-color: #0d1e2f;
+//   // --background-color-light: #eeeff0;
+//   --background-color-light: white;
+//   --text-color: #FFFFFFDD;
+//   --text-color-light: #213547;
+
+//   font-family: 'Gotham Rounded Light', Arial, sans-serif;
+//   line-height: 1.5;
+//   font-weight: 400;
+
+//   color-scheme: light dark;
+//   color: var(--text-color);
+//   background-color: var(--background-color);
+
+//   font-synthesis: none;
+//   text-rendering: optimizeLegibility;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+//   // text-align: -webkit-center;
+
+// }
+$text-color: #212B36;
+*{
+  font-family: "Public Sans";
+  font-weight: 400;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// a {
+//   font-weight: 500;
+//   color: var(--primary-color);
+//   text-decoration: inherit;
+// }
+// a:hover {
+//   color: var(--secondary-color);
+// }
+
+// body {
+//   //margin: 0;
+//   display: contents;
+//   //min-width: 320px;
+//   max-width: 80vw;
+//   min-height: 95vh;
+// }
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 2.2em;
+  line-height: 1.1;
+}
+
+// button {
+//   border-radius: 8px;
+//   border: 1px solid transparent;
+//   padding: 0.6em 1.2em;
+//   font-size: 1em;
+//   font-weight: 500;
+//   font-family: inherit;
+//   background-color: var(--tertiary-dark-color);
+//   cursor: pointer;
+//   transition: border-color 0.25s;
+// }
+// button:hover {
+//   border-color: var(--primary-color);
+// }
+// button:focus,
+// button:focus-visible {
+//   outline: 4px auto -webkit-focus-ring-color;
+// }
+
+// @media (prefers-color-scheme: light) {
+//   :root {
+//     color: var(--text-color-light);
+//     background-color: var(--background-color-light);
+//   }
+//   a:hover {
+//     color: var(--primary-color);
+//   }
+//   button {
+//     background-color: var(--tertiary-dark-color);
+//   }
+// }
+
+// @media (max-width: 350px) {
+//   h2 {
+//     font-size: 1.2em;
+//   }
+// }

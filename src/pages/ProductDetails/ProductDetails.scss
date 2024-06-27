@@ -1,0 +1,248 @@
+.product-details-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .product-details-inner{
+        max-width: 1200px;
+        padding: 0 ;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+        .product-details-header{
+            span{
+                color: rgba(28, 37, 46, 1);
+                font-size: 14px;
+                font-weight: 600;
+            }
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .right-head{
+                display: flex;
+                align-items: center;
+                column-gap: 24px;
+                & > span > svg{
+                    font-size: 20px;
+                    color: rgba(99, 115, 129, 1);
+                }
+            }
+        }
+        .details{
+            padding: 0 0 24px 0;
+            display: flex;
+            column-gap: 32px;
+            .left-details{
+                .view{
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    img{
+                        width: 620px;
+                        height: 620px;
+                        border-radius: 16px;
+                    }
+                    .image-switcher{
+                        position: absolute;
+                        bottom: 16px;
+                        right: 16px;
+                        width: 96.27px;
+                        height: 36px;
+                        padding: 4px;
+                        border-radius: 10px;
+                        background: rgba(20, 26, 33, 0.48);
+                        color: #fff;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-evenly;
+                    }
+                }
+                .miniature{
+                    display: flex;
+                    padding: 24px;
+                    column-gap: 8px;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+            .right-details{
+                padding: 32px;
+                display: flex;
+                flex-direction: column;
+                .state{
+                    margin-bottom: 16px;
+                    span{
+                        padding: 5px 6px 5px 6px;
+                        border-radius: 6px;
+                        background-color: rgba(0, 184, 217, 0.16);
+                        font-size: 12px;
+                        font-weight: 700;
+                        color: rgba(0, 108, 156, 1);
+                    }
+                }
+                .stock-state{
+                    font-size: 12px;
+                    font-weight: 700;
+                    line-height: 18px;
+                    color: rgba(255, 171, 0, 1);
+                    margin-bottom: 16px;
+                }
+                h3{
+                    font-size: 20px;
+                    font-weight: 700;
+                    margin-bottom: 16px;
+                }
+                .review{
+                    display: flex;
+                    column-gap: 8px;
+                    margin-bottom: 16px;
+                    div{
+                        display: flex;
+                        column-gap: 2px;
+                        svg{
+                            color: rgba(250, 175, 0, 1);
+                        }
+                    }
+                    span{
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: rgba(145, 158, 171, 1);
+                    }
+
+                }
+                .price{
+                    margin-bottom: 16px;
+                    p{
+                        font-size: 20px;
+                        font-weight: 700;
+                    }
+                }
+                .description{
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: rgba(99, 115, 129, 1);
+                    line-height: 22px;
+                    margin-bottom: 23px;
+                }
+                .separator{
+                    width: 100%;
+                    height: 1px;
+                    background: rgba(145, 158, 171, 0.2);
+                    margin-bottom: 23px;
+                }
+                .other-details{
+                    div{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        p{
+                            font-size: 14px;
+                            font-weight: 600;
+                        }
+                        &.color-row{
+                            margin-bottom: 24px;
+                            div{
+                                display: flex;
+                                align-items: center;
+                                column-gap: 10px;
+                                svg{
+                                    background: rgba(255, 192, 203, 1);
+                                    border-radius: 50%;
+                                    color: rgba(0, 0, 0, 0.87);
+                                    width: 24px;
+                                    height: 24px;
+                                    padding: 5px;
+                                    box-shadow: 4px 4px 8px 0px rgba(255, 192, 203, 0.48);
+                                    border: 1px solid rgba(145, 158, 171, 0.16);
+                                }
+                                .color{
+                                    width: 20px;
+                                    height: 20px;
+                                    border-radius: 10px;
+                                }
+                            }
+                        }
+                        &.size-row{
+                            div{
+                                width: 88px;
+                                border-radius: 8px;
+                                border: 1px solid rgba(145, 158, 171, 0.2);
+                                padding: 8px 14px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                cursor: pointer;
+                                svg{
+                                    color: rgba(145, 158, 171, 0.8);
+                                }
+                            }
+                        }
+                        &.quantity-row{
+                            div{
+                                width: 88px;
+                                border-radius: 8px;
+                                border: 1px solid rgba(145, 158, 171, 0.2);
+                                padding: 8px 14px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                svg{
+                                    color: rgba(145, 158, 171, 0.8);
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                    .size-chart{
+                        margin: 4px 0 24px 0;
+                        text-decoration: underline;
+                        font-size: 12px;
+                        font-weight: 400;
+                        text-align: right;
+                    }
+                    .available{
+                        margin: 4px 0 24px 0;
+                        font-size: 12px;
+                        font-weight: 400;
+                        text-align: right;
+                    }
+                }
+                .btn-container{
+                    margin-bottom: 24px;
+                    display: flex;
+                    column-gap: 16px;
+                    button{
+                        svg{
+                            font-size: 24px;
+                        }
+                    }
+                }
+                .sub-btn-container{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    p{
+                        display: flex;
+                        align-items: center;
+                        cursor: pointer;
+                        svg{
+                            color: rgba(99, 115, 129, 1);
+                        }
+                        span{
+                            font-size: 14px;
+                            font-weight: 600;
+                            margin-left: 8px;
+                            color: rgba(99, 115, 129, 1);
+                        }
+                    }
+                }
+            }
+        }
+        .details-card{
+            display: flex;
+            justify-content: space-evenly;
+            padding: 40px 0;
+        }
+    }
+}

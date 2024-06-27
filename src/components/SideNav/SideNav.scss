@@ -1,0 +1,92 @@
+.sidenav-container{
+    padding: 20px 16px;
+    border-right: 1px solid rgba(145, 158, 171, 0.12);
+    width: 325px;
+    background: #fff;
+    transition: width 0.4s ease;
+    min-height: 100vh;
+    border: 3px solid blue;
+    .hide{
+        width: 136px;
+    }
+    .sidenav-header{
+        img{
+            width: 60px;
+        }
+        position: relative;
+        .hide-btn-action{
+            width: 26px;
+            height: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 13px;
+            background: #fff;
+            border: 1px solid rgba(145, 158, 171, 0.12);
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: -29px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            &.reverse{
+                transform: translateY(-50%) rotate(180deg);
+            }
+            svg{
+                color: rgba(99, 115, 129, 1);
+            }
+        }
+    }
+    .menu{
+        h3{
+            font-size: 11px;
+            font-weight: 700;
+            line-height: 16.5px;
+            color: rgba(145, 158, 171, 1);
+            padding: 8px 12px;
+        }
+        .menu-items{
+            display: flex;
+            flex-direction: column;
+            row-gap: 4px;
+            cursor: pointer;
+            .item{
+                display: flex;
+                padding: 10px 8px 10px 12px;
+                column-gap: 12px;
+                border-radius: 8px;
+                align-items: center;
+                transition: width 0.4s ease;
+                p{
+                    width: 189px;
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 22px;
+
+                    color: rgba(99, 115, 129, 1);
+                }
+                &.active{
+                    background-color: rgba(0, 167, 111, 0.08);
+                    p{
+                        color: rgba(0, 167, 111, 1);
+                    }
+                }
+                span{
+                    padding: 5px 6px 5px 6px;
+                    border-radius: 6px;
+                    background-color: rgba(255, 233, 213, 1);
+                    font-size: 12px;
+                    font-weight: 700;
+                    color: rgba(122, 9, 22, 1);
+                }
+            }
+            // &.hide{
+            //     .item{
+            //         p{
+            //             display: none;
+            //         }
+            //     }
+            // }
+        }
+    }
+}

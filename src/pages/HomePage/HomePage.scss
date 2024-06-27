@@ -1,0 +1,35 @@
+.homepage-hero{
+    display: flex;
+    flex-wrap: wrap;
+    // height: 936px;
+    .homepage-hero-left, .homepage-hero-right{
+        transition: all 0.4s ease;
+        flex: 1;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        min-width: 400px;
+        p{
+            font-family: Noto Sans JP;
+            font-size: 22px;
+            font-weight: 350;
+            line-height: 30px;
+            text-align: center;
+            color: #fff;
+        }
+    }
+    .homepage-hero-left {
+        background-color: grey;
+        background: url("../../assets/images/cdc-dispatch_1440_1200.png") center center/cover no-repeat;
+        
+    }
+    .homepage-hero-right{
+        background-color: cyan;
+        background: url("../../assets/images/pcd-dispatch_1440_1200.png") center center/cover no-repeat;
+    }
+    .homepage-hero-left:hover, .homepage-hero-right:hover{
+        flex: 1.4;
+    }
+}
