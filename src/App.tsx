@@ -13,11 +13,12 @@ import BlogList from './pages/BlogList/BlogList';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
 import Blog from "./pages/Blog/Blog";
 import BlogArticleDetails from './pages/BlogArticleDetails/BlogArticleDetails';
-
+import RoleSwitcher from "./components/RoleSwitcher/RoleSwitcher";
 const App: FC = () => {
   
   return (
     <div className="app-container">
+      
       <SideNav/>
       <div className="app-content">
         <DashboardNav/>
@@ -31,7 +32,7 @@ const App: FC = () => {
         </Routes>
       <Footer/>
       </div> 
-      
+      <RoleSwitcher/>
     </div>
   )
 }
