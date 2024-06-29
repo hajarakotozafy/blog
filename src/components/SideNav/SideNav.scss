@@ -1,14 +1,10 @@
 .sidenav-container{
     padding: 20px 16px;
     border-right: 1px solid rgba(145, 158, 171, 0.12);
-    width: 325px;
     background: #fff;
     transition: width 0.4s ease;
     min-height: 100vh;
-    border: 3px solid blue;
-    .hide{
-        width: 136px;
-    }
+    z-index: 99999;
     .sidenav-header{
         img{
             width: 60px;
@@ -48,15 +44,33 @@
         .menu-items{
             display: flex;
             flex-direction: column;
-            row-gap: 4px;
-            cursor: pointer;
+            
             .item{
                 display: flex;
-                padding: 10px 8px 10px 12px;
-                column-gap: 12px;
                 border-radius: 8px;
+                padding: 10px 8px 10px 12px;
                 align-items: center;
                 transition: width 0.4s ease;
+                cursor: pointer;
+                margin-bottom: 4px;
+                a{
+                    display: flex;
+                    text-decoration: none;
+                    align-items: center;
+                }
+                div{
+                    display: flex;
+                    display: flex;
+                    padding: 0 8px 0 12px;
+                    column-gap: 12px;
+                }
+                svg{
+                    color: rgba(99, 115, 129, 1);
+                    font-size: 22px;
+                    &:nth-child(2){
+                        font-size: 14px;
+                    }
+                }
                 p{
                     width: 189px;
                     font-size: 14px;
@@ -67,7 +81,7 @@
                 }
                 &.active{
                     background-color: rgba(0, 167, 111, 0.08);
-                    p{
+                    p, svg{
                         color: rgba(0, 167, 111, 1);
                     }
                 }
@@ -80,13 +94,31 @@
                     color: rgba(122, 9, 22, 1);
                 }
             }
-            // &.hide{
-            //     .item{
-            //         p{
-            //             display: none;
-            //         }
-            //     }
-            // }
+            .displayOneCollapse{
+                display: none;
+            }
+            &.hide{
+                .item{
+                    div{
+                        flex-direction: column;
+                    }
+                    svg:nth-child(2){
+                        transform: rotate(-90deg);
+                    }
+                    p{
+                        width: auto;
+                    }
+                    &.none-on-collapse{
+                        display: none;
+                    }
+                }
+                .submenu{
+                    display: none;
+                }
+                .displayOneCollapse{
+                    display: flex;
+                }
+            }
         }
     }
 }

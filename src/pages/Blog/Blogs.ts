@@ -3,11 +3,11 @@ import Cover2 from "../../assets/images/blog-list-data/cover-2.png";
 import Cover3 from "../../assets/images/blog-list-data/cover-3.png";
 import Cover4 from "../../assets/images/blog-list-data/cover-4.png";
 import Cover5 from "../../assets/images/blog-list-data/cover-5.png";
-import Avatar1 from "../../assets/images/blog-list-data/avatar-1.png"
-import Avatar2 from "../../assets/images/blog-list-data/avatar-2.png"
-import Avatar3 from "../../assets/images/blog-list-data/avatar-3.png"
-import Avatar4 from "../../assets/images/blog-list-data/avatar-4.png"
-import Avatar5 from "../../assets/images/blog-list-data/avatar-5.png"
+import Avatar1 from "../../assets/images/blog-list-data/avatar-1.png";
+import Avatar2 from "../../assets/images/blog-list-data/avatar-2.png";
+import Avatar3 from "../../assets/images/blog-list-data/avatar-3.png";
+import Avatar4 from "../../assets/images/blog-list-data/avatar-4.png";
+import Avatar5 from "../../assets/images/blog-list-data/avatar-5.png";
 export const Blogs = [
     {
         id: 0,

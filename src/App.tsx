@@ -17,20 +17,20 @@ import BlogArticleDetails from './pages/BlogArticleDetails/BlogArticleDetails';
 const App: FC = () => {
   
   return (
-    <>
-      {/* <DashboardNav/>
-      <SideNav/> */}
-      <Routes>
-          <Route path='/blog' element={<Blog/>} />
-          <Route path='/blog/list' element={<BlogList/>} />
-          <Route path='/product/details' element={<ProductDetails/>} />
-          <Route path='/blog/article/details' element={<BlogArticleDetails/>} />
-      </Routes>
+    <div className="app-container">
+      <SideNav/>
+      <div className="app-content">
+        <DashboardNav/>
+        <Routes>
+            <Route path='/blog' element={<Blog/>} />
+            <Route path='/blog/list' element={<BlogList/>} />
+            <Route path='/blog/details' element={<ProductDetails/>} />
+            <Route path='/blog/create' element={<BlogArticleDetails/>} />
+        </Routes>
       <Footer/>
+      </div> 
       
-       
-      
-    </>
+    </div>
   )
 }
 

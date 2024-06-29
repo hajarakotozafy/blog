@@ -4,6 +4,7 @@ import Logo from "../../assets/images/brand_icon.png";
 import { SideNavData } from "./SideNavData";
 import BlogIcon from "../../assets/images/blog-icon.svg";
 import { FaArrowLeft as ArrowIcon} from "react-icons/fa";
+import SideNavItem from "../SideNavItem/SideNavItem";
 
 const SideNav:FC = () => {
     const [hideSideNav, setHideSideNav] = useState(true)
@@ -18,14 +19,7 @@ const SideNav:FC = () => {
                 <div className={`menu-items ${hideSideNav?'hide':''}`}>
                     {
                         SideNavData.map(item => {
-                            return(
-                                <div className="item active">
-                                    <img src={BlogIcon}/><p>{item.name}</p>
-                                    {
-                                        item.name==="Mail" && (<span className="stat">+32</span>)
-                                    }
-                                </div>
-                            )
+                            return(<SideNavItem item={item}/>)
                         })
                     }
                 </div>

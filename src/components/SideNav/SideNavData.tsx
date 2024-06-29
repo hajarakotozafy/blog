@@ -1,47 +1,72 @@
 import { FaBlog as BlogIcon } from "react-icons/fa";
-
+import { TbFloatLeft } from "react-icons/tb";
+import { MdFolderOpen } from "react-icons/md";
+import { IoMailOpenOutline } from "react-icons/io5";
+import { HiOutlineChatBubbleLeftRight } from "react-icons/hi2";
+import { HiOutlineCalendar } from "react-icons/hi";
+import { BsWalletFill } from "react-icons/bs";
+import { GiGolfFlag } from "react-icons/gi";
 export const SideNavData = [
     {
-        icon: <BlogIcon/>,
+        icon: <TbFloatLeft/>,
         name: 'Blog',
-        url: '#',
+        url: '/blog',
+        collapsedItem: false,
         submenu: [
             {
                 name: 'List',
-                url: '#'
+                url: '/blog/list'
             },
             {
                 name: 'Details',
-                url: '#'
+                url: '/blog/details'
             },
             {
                 name: 'Create',
-                url: '#'
+                url: '/blog/create'
             },
             {
                 name: 'Edit',
-                url: '#'
+                url: '/blog/edit'
             }
         ]
     },
     {
-        icon: <BlogIcon/>,
+        icon: <MdFolderOpen/>,
         name: 'File manager',
-        url: '#' 
+        url: '/file-manager',
+        collapsedItem: false,
     },
     {
-        icon: <BlogIcon/>,
+        icon: <IoMailOpenOutline/>,
         name: 'Mail',
-        url: '#' 
+        url: '/mail',
+        collapsedItem: false,
     },
     {
-        icon: <BlogIcon/>,
+        icon: <HiOutlineChatBubbleLeftRight/>,
         name: 'Chat',
-        url: '#' 
+        url: '/chat',
+        collapsedItem: false,
     },
     {
-        icon: <BlogIcon/>,
+        icon: <HiOutlineCalendar/>,
         name: 'Calendar',
-        url: '#' 
+        url: '/calendar',
+        collapsedItem: false,
+    },
+    {
+        icon: <BsWalletFill/>,
+        name: 'Job',
+        url: '/job',
+        collapsedItem: true, 
+        submenu: []
+    },
+    {
+        icon: <GiGolfFlag/>,
+        name: '',
+        url: '#',
+        collapsedItem: true,
+        submenu: []
     }
 ]
