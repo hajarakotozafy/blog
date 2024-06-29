@@ -22,7 +22,9 @@ const App: FC = () => {
       <div className="app-content">
         <DashboardNav/>
         <Routes>
+            <Route path='/' element={<Blog/>} />
             <Route path='/blog' element={<Blog/>} />
+            
             <Route path='/blog/list' element={<BlogList/>} />
             <Route path='/blog/details' element={<ProductDetails/>} />
             <Route path='/blog/create' element={<BlogArticleDetails/>} />
