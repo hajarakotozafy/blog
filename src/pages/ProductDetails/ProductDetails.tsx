@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
 
 import { IoIosArrowBack } from "react-icons/io";
 import { RxExternalLink } from "react-icons/rx";
@@ -27,8 +27,11 @@ import P2Min from "../../assets/images/product-details/product-2-min.png";
 import P3Min from "../../assets/images/product-details/product-3-min.png";
 import P4Min from "../../assets/images/product-details/product-4-min.png";
 import P5Min from "../../assets/images/product-details/product-5-min.png";
-const ProductDetails:FC = () => {
 
+import { RoleContext } from "../../contexts/RoleContext";
+
+const ProductDetails:FC = () => {
+    const { role } = useContext(RoleContext);
     const StarsComponent = (nb:number) =>{
         const component = [];
         for(let i=1; i<=nb; i++){
@@ -40,14 +43,17 @@ const ProductDetails:FC = () => {
     return (
         <div className="product-details-container">
             <div className="product-details-inner"> 
-                <div className="product-details-header">
-                    <span><IoIosArrowBack/> Back</span>
-                    <div className="right-head">
-                        <span><RxExternalLink/></span>
-                        <span><MdModeEdit/></span>
-                        <Button>Published <IoIosArrowDown/></Button>
+                {
+                    role.isAdmin && 
+                    <div className="product-details-header">
+                        <span className="back-btn"><IoIosArrowBack/> Back</span>
+                        <div className="right-head">
+                            <span><RxExternalLink/></span>
+                            <span><MdModeEdit/></span>
+                            <Button>Published <IoIosArrowDown/></Button>
+                        </div>
                     </div>
-                </div>
+                }
 
                 <div className="details">
                     <div className="left-details">

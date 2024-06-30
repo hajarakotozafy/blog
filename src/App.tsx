@@ -1,39 +1,61 @@
 import { FC } from 'react';
 import './App.scss';
 
+import { useEffect, useReducer } from "react";
 import { Route, Routes } from 'react-router-dom';
 
-import SignIn from './pages/SignIn/SignIn';
-import HomePage from './pages/HomePage/HomePage';
-import Footer from './components/Footer/Footer';
+import { RoleContext } from "./contexts/RoleContext";
+
 import Navbar from './components/Navbar/Navbar';
-import SideNav from './components/SideNav/SideNav';
-import DashboardNav from './components/DashboardNav/DashboardNav';
+import Footer from './components/Footer/Footer';
+import SideBar from './components/SideBar/SideBar';
 import BlogList from './pages/BlogList/BlogList';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
 import Blog from "./pages/Blog/Blog";
 import BlogArticleDetails from './pages/BlogArticleDetails/BlogArticleDetails';
 import RoleSwitcher from "./components/RoleSwitcher/RoleSwitcher";
+
+
+// initial value of role: Admin
+const initialRole = {
+    isAdmin: true
+}
+
+const reducer = (state, action) => {
+  switch(action.type){
+    case 'setIsAdmin':
+      return { ...state, isAdmin: action.value };
+    default: 
+      break;
+  }
+}
+
 const App: FC = () => {
-  
+  const [role, dispatch] = useReducer(reducer, initialRole);
+
+  useEffect(() => {
+    console.log("Is Admin?: ", role.isAdmin);
+  }, [role]);
+
   return (
-    <div className="app-container">
-      
-      <SideNav/>
-      <div className="app-content">
-        <DashboardNav/>
-        <Routes>
-            <Route path='/' element={<Blog/>} />
-            <Route path='/blog' element={<Blog/>} />
-            
-            <Route path='/blog/list' element={<BlogList/>} />
-            <Route path='/blog/details' element={<ProductDetails/>} />
-            <Route path='/blog/create' element={<BlogArticleDetails/>} />
-        </Routes>
-      <Footer/>
-      </div> 
-      <RoleSwitcher/>
-    </div>
+    <RoleContext.Provider value={{role, dispatch}}>
+      <div className="app-container">
+        { role.isAdmin && <SideBar/>}
+        <div className="app-content">
+          <Navbar/>
+          <Routes>
+              <Route path='/' element={ role.isAdmin ? <BlogList/> : <Blog/>} />
+              <Route path='/blog' element={ role.isAdmin ? <BlogList/> : <Blog/>} />
+              <Route path='/blog/list' element={<BlogList/>} />
+              <Route path='/blog/details' element={<BlogArticleDetails/>} />
+              <Route path='/blog/create' element={<BlogArticleDetails/>} />
+          </Routes>
+          { !role.isAdmin && <Footer/> }
+        </div> 
+
+        <RoleSwitcher/>
+      </div>
+    </RoleContext.Provider>
   )
 }
 

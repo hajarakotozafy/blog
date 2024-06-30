@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
 import "./BlogArticleDetails.scss";
 import { FaShareAlt } from "react-icons/fa";
 import Avatar from "../../assets/images/blog-list-data/avatar-3.png";
@@ -20,7 +20,10 @@ import { Comments } from "./Comments";
 import { RecentPosts } from "./recent-posts";
 import ArticleCard from "../../components/ArticleCard/ArticleCard";
 
+import { RoleContext } from "../../contexts/RoleContext";
+
 const BlogArticleDetails:FC = () => {
+    const { role } = useContext(RoleContext);
     return(
         <div className="blog-article-details-container">
             <div className="header">
@@ -30,15 +33,18 @@ const BlogArticleDetails:FC = () => {
                             <h2>Climate Change and Its Effects on<br/>Global Food Security</h2>
                         </div>
                         <div className="blog-owner">
-                            <div className="profile">
-                                <div className="avatar">
-                                    <img src={Avatar}/>
+                            {!role.isAdmin ? 
+                                <div className="profile">
+                                    <div className="avatar">
+                                        <img src={Avatar}/>
+                                    </div>
+                                    <div className="head-info">
+                                        <h4>Deja Brady</h4>
+                                        <span>15 Jun 2024</span>
+                                    </div>
                                 </div>
-                                <div className="head-info">
-                                    <h4>Deja Brady</h4>
-                                    <span>15 Jun 2024</span>
-                                </div>
-                            </div>
+                                :<div></div>
+                            }
                             <div className="share-btn">
                                 <FaShareAlt/>
                             </div>

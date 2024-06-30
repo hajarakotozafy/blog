@@ -6,7 +6,7 @@ import { HiOutlineChatBubbleLeftRight } from "react-icons/hi2";
 import { HiOutlineCalendar } from "react-icons/hi";
 import { BsWalletFill } from "react-icons/bs";
 import { GiGolfFlag } from "react-icons/gi";
-export const SideNavData = [
+export const SideBarData = [
     {
         icon: <TbFloatLeft/>,
         name: 'Blog',

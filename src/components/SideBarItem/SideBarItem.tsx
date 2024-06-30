@@ -1,13 +1,12 @@
 import { FC, useState } from "react";
-import "./SideNavItem.scss";
-import { SideNavItemProps } from "./SideNavItem.types";
+import "./SideBarItem.scss";
 
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 
 import { useLocation, NavLink } from "react-router-dom";
 
-const SideNavItem = ({item}:SideNavItemProps) => {
+const SideBarItem = ({item}) => {
     const [displaySubmenu, setDisplaySubmenu] = useState(false);
     const location = useLocation();
     return(
@@ -40,9 +39,9 @@ const SideNavItem = ({item}:SideNavItemProps) => {
                     <div className={displaySubmenu?'submenu':''}>
 
                         {
-                            displaySubmenu && item.submenu.map((elem) =>(
+                            displaySubmenu && item.submenu.map((elem, index) =>(
                                 
-                                    <div className={`${location.pathname === elem.url ? 'sub-active': ''}`}>
+                                    <div key={index} className={`${location.pathname === elem.url ? 'sub-active': ''}`}>
                                         <NavLink to={elem.url}>
                                             <div className="motif"></div>
                                             <p>{elem.name}</p>
@@ -56,10 +55,4 @@ const SideNavItem = ({item}:SideNavItemProps) => {
 	)
 }
 
-export default SideNavItem
-// <div className={item.name!=="Blog" && !item.collapsedItem? "item none-on-collapse active":"item active"}>
-//     {item.icon}<p>{item.name}</p>
-//     {
-//         item.name==="Mail" && (<span className="stat">+32</span>)
-//     }
-// </div>
+export default SideBarItem;

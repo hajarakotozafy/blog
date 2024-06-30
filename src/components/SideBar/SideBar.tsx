@@ -1,13 +1,13 @@
 import { FC, useState } from "react";
-import "./SideNav.scss";
+import "./SideBar.scss";
 import Logo from "../../assets/images/brand_icon.png";
-import { SideNavData } from "./SideNavData";
+import { SideBarData } from "./SideBarData";
 import BlogIcon from "../../assets/images/blog-icon.svg";
 import { FaArrowLeft as ArrowIcon} from "react-icons/fa";
-import SideNavItem from "../SideNavItem/SideNavItem";
+import SideBarItem from "../SideBarItem/SideBarItem";
 
-const SideNav:FC = () => {
-    const [hideSideNav, setHideSideNav] = useState(true)
+const SideBar:FC = () => {
+    const [hideSideNav, setHideSideNav] = useState(false)
     return (
         <div className={`sidenav-container ${hideSideNav?'hide':''}`}>
             <div className="sidenav-header">
@@ -18,8 +18,8 @@ const SideNav:FC = () => {
                 <h3>OVERVIEW</h3>
                 <div className={`menu-items ${hideSideNav?'hide':''}`}>
                     {
-                        SideNavData.map(item => {
-                            return(<SideNavItem item={item}/>)
+                        SideBarData.map((item, index) => {
+                            return(<SideBarItem key={index} item={item}/>)
                         })
                     }
                 </div>
@@ -28,4 +28,4 @@ const SideNav:FC = () => {
     )
 }
 
-export default SideNav;
+export default SideBar;
