@@ -81,6 +81,7 @@
         justify-content: center;
         border-bottom: 1px solid rgba(145, 158, 171, 0.2);
         margin-bottom: 24px;
+        padding: 0 16px;
         .orderednav-inner{
             max-width: 720px;
             flex: 1;
@@ -109,6 +110,7 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        padding: 0 16px;
         .blog-content-inner{
             max-width: 720px;
             flex: 1;
@@ -377,7 +379,7 @@ ul, ol{
     min-height: 130px;
     border-radius: 8px;
     border: 1px solid rgba(145, 158, 171, 0.2);
-    width: 720px;
+    width: 100%;
     outline: none;
     padding: 16px;
 }
@@ -402,6 +404,7 @@ ul, ol{
 .recent-posts{
     display: flex;
     justify-content: center;
+    padding: 0 16px;
     .recent-posts-inner{
         flex: 1;
         max-width: 1152px;
@@ -410,4 +413,8 @@ ul, ol{
         column-gap: auto;
         flex-wrap: wrap;
     }
+}
+
+.blog-illustration{
+    width: 100%;
 }

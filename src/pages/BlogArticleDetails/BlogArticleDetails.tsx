@@ -119,7 +119,7 @@ const BlogArticleDetails:FC = () => {
                     </div>
                     <div className="block-code">
                         <h4 className="article-heading4">Block code</h4>
-                        <img src={Pre}/>
+                        <img src={Pre} className="blog-illustration"/>
                         <p className="article-paragraph">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
                             been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
@@ -139,7 +139,7 @@ const BlogArticleDetails:FC = () => {
                             their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
                             purpose (injected humour and the like).
                         </p>
-                        <img src={illustration1}/>
+                        <img src={illustration1} className="blog-illustration"/>
                         <p className="article-paragraph">
                             It is important that you buy links because the links are what get you the results that you want.
                             The popularity of the links that are listed in the MTA directory is in fact one of the most important
@@ -148,7 +148,7 @@ const BlogArticleDetails:FC = () => {
                             which is nothing compared to what you would pay if you decided to do it through any other
                             company or website.
                         </p>
-                        <img src={illustration2}/>
+                        <img src={illustration2} className="blog-illustration"/>
                         
                         <div className="separator"></div>
                         
