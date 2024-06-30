@@ -5,8 +5,9 @@
     padding: 40px 0;
     .blog-list-inner{
         flex: 1; 
-        max-width: 1200px;
-        padding: 0 40px;
+        border: 1px solid red;
+        max-width: 1152px;
+        padding: 0 16px;
         display: flex;
         flex-direction: column;
         row-gap: 40px;

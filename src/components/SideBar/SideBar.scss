@@ -24,7 +24,7 @@
             transform: translateY(-50%);
             right: -29px;
             cursor: pointer;
-            transition: all 0.4s ease;
+/*            transition: all 0.4s ease;*/
             &.reverse{
                 transform: translateY(-50%) rotate(180deg);
             }
@@ -118,6 +118,29 @@
                 .displayOneCollapse{
                     display: flex;
                 }
+                .sidenav-header{
+
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 764px){
+        position: absolute; 
+        &.hide{
+            top: 0;
+            left: 0;
+            padding: 0;
+            .sidenav-header{
+                img{
+                    display: none;
+                }
+            }
+            .hide-btn-action{
+                top: 48px;
+                left: 8px;
+                            }
+            .menu{
+                display:none;
             }
         }
     }
