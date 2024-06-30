@@ -1,4 +1,4 @@
-import { FC, useContext } from "react";
+import { FC, useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import UK from "../../assets/images/UK.png";
@@ -8,6 +8,8 @@ import Settings from "../../assets/images/settings-icon.png";
 import Logo from "../../assets/images/brand_icon.png";
 import Avatar from "../../assets/images/avatar.png";
 import SearchIcon from "../../assets/images/search-icon.png";
+import { HiMenuAlt3 } from "react-icons/hi";
+import { IoMdClose } from "react-icons/io";
 
 import "./Navbar.scss";
 
@@ -18,6 +20,7 @@ import { UserNavbarData } from "./UserNavbarData";
 import { RoleContext } from "../../contexts/RoleContext";
 
 const Navbar:FC = () => {
+    const [ showNav, setShowNav ] = useState(false)
     const { role } = useContext(RoleContext);
 
     return (
@@ -40,9 +43,13 @@ const Navbar:FC = () => {
             </div>
             :
             <div className="user-nav-container">
-                <div className="user-nav-inner">
+                <div className="menu-btn" onClick={() => setShowNav(true)}>
+                    <HiMenuAlt3/>
+                </div>
+                <div className={`user-nav-inner ${showNav?"active": ""}`}>
                     <div className="logo">
                         <img src={Logo}/>
+                        <div className="close-menu" onClick={() => setShowNav(false)}><IoMdClose/></div>
                     </div>
                     <div className="items">
                         {UserNavbarData.map((elem, index) => {

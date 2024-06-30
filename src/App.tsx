@@ -48,7 +48,7 @@ const App: FC = () => {
               <Route path='/blog' element={ role.isAdmin ? <BlogList/> : <Blog/>} />
               <Route path='/blog/list' element={<BlogList/>} />
               <Route path='/blog/details' element={<BlogArticleDetails/>} />
-              <Route path='/blog/create' element={<BlogArticleDetails/>} />
+              <Route path='/product/details' element={<ProductDetails/>} />
           </Routes>
           { !role.isAdmin && <Footer/> }
         </div> 
