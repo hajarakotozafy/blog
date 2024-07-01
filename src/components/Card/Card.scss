@@ -1,8 +1,14 @@
+@use '../../styles/abstracts' as *;
+
 .card-container{
-    box-shadow: 0px 12px 24px -4px rgba(145, 158, 171, 0.12);
-    border: 1px solid rgba(145, 158, 171, 0.2);
+    @include themed {
+        box-shadow: t('article-card-shadow');
+        background: t('article-card-bg');
+        border: t('article-card-border');
+    }
     display: flex;
     border-radius: 16px;
+
     .info{
         padding: 24px;
         display: flex;
@@ -43,7 +49,9 @@
                 font-weight: 600;
                 font-family: Public Sans;
                 line-height: 22px;
-                color: rgba(28, 37, 46, 1);           
+                @include themed {
+                    color: t('text-black');
+                }         
                 overflow: hidden;            
                 text-overflow: ellipsis;     
                 display: -webkit-box;        
@@ -54,7 +62,9 @@
                 font-size: 14px;
                 font-weight: 400;
                 line-height: 22px;
-                color: rgba(99, 115, 129, 1);           
+                @include themed {
+                    color: t('text-gray');
+                }         
                 overflow: hidden;            
                 text-overflow: ellipsis;     
                 display: -webkit-box;        
