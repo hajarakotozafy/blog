@@ -8,19 +8,30 @@ $text-gray-light: rgba(99, 115, 129, 1);
 $text-gray-dark: rgba(145, 158, 171, 1);
 $text-black-light: rgba(28, 37, 46, 1);
 $text-black-dark: rgba(255, 255, 255, 1);
+$nav-shadow-light: 0px 8px 16px 0px rgba(145, 158, 171, 0.16);
+$nav-shadow-dark: '';
+
+$primary-btn-light-bg: #212B36;
+$primary-btn-light-text: #ffffff;
+$primary-btn-dark-bg: #ffffff;
+$primary-btn-dark-text: rgba(28, 37, 46, 1);
+
 $themes: (
 	dark: (
 		background-color: $body-background-dark,
 		text-gray: $text-gray-dark,
 		text-black: $text-black-dark,
-		text: green,
-
+		nav-shadow: $nav-shadow-dark,
+		primary-btn-bg: $primary-btn-dark-bg,
+		primary-btn-text: $primary-btn-dark-text,
 	),
 	light: (
 		background-color: $body-background-light,
 		text-gray: $text-gray-light,
 		text-black: $text-black-light,
-		text: red,
+		nav-shadow: $nav-shadow-light,
+		primary-btn-bg: $primary-btn-light-bg,
+		primary-btn-text: $primary-btn-light-text,
 	),
 );
 
