@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import './App.scss';
-
+import "./styles/styles.scss";
 import { useEffect, useReducer } from "react";
 import { Route, Routes } from 'react-router-dom';
 

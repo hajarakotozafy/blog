@@ -1,3 +1,4 @@
+@use '../../styles/abstracts' as *;
 .dashboardnav-container{
     display: flex;
     align-items: center;
@@ -7,7 +8,9 @@
     padding-right: 40px;
     position: sticky;
     top: 0;
-    background: #fff;
+    @include themed {
+        background: t('background-color');
+    }
     z-index: 9999;
     box-shadow: 0px 8px 16px 0px rgba(145, 158, 171, 0.16);
     width: 100%;
@@ -103,8 +106,13 @@
                 color: rgba(28, 37, 46, 1);
                 text-decoration: none;
             }
-            .settings-btn{
-                cursor:pointer;
+            .nav-settings-btn{
+                display: flex;
+                align-items: center;
+                column-gap: 16px;
+                img{
+                    cursor: pointer;
+                }
             }
         }
     }

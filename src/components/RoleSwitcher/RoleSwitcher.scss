@@ -1,3 +1,5 @@
+@use '../../styles/abstracts' as *;
+
 .role-switcher-container{
 	position: absolute;
 	bottom: 32px;
@@ -5,8 +7,10 @@
 	border: 1px solid rgba(145, 158, 171, 0.08);
 	padding: 16px 24px;
 	border-radius: 12px;
-	background: #ffffff;
-	z-index: 9999999999999999999999999;
+	@include themed {
+		background: t('background-color');
+	}
+	z-index: 99999999999;
 	form{
 		display: flex;
 		flex-direction: column;
@@ -15,7 +19,11 @@
 			display: flex;
 			column-gap: 8px;
 			input, label{
+				background-color : transparent;
 				cursor: pointer;
+				@include themed {
+					color: t('text');
+				}
 			}
 		}
 	}

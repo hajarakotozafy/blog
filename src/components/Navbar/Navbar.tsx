@@ -14,6 +14,7 @@ import { IoMdClose } from "react-icons/io";
 import "./Navbar.scss";
 
 import Button from "../Button/Button";
+import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
 
 import { UserNavbarData } from "./UserNavbarData";
 
@@ -37,6 +38,7 @@ const Navbar:FC = () => {
                     <div><img src={People}/></div>
                     <div><img src={Settings}/></div>
                 </div>
+                <ThemeSwitcher/>
                 <div className="avatar">
                     <img src={Avatar}/>
                 </div>
@@ -58,7 +60,10 @@ const Navbar:FC = () => {
                             )
                         })}
                         
-                        <div className="settings-btn"><img src={Settings}/></div>
+                        <div className="nav-settings-btn">
+                            <img src={Settings}/> 
+                            <ThemeSwitcher/>
+                        </div>
                         <Button color="white">Sign In</Button>
                         <Button>Purchase</Button>
                     </div>
