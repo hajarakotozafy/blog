@@ -1,7 +1,7 @@
 import { FC } from "react";
 import "./PostForm.scss";
 import Button from "../../components/Button/Button";
-
+import UploadInput from "../UploadInput/UploadInput";
 const PostForm:FC = () => {
 	return(
 		<div className="post-form-container">
@@ -31,6 +31,15 @@ const PostForm:FC = () => {
 	            		<div className="form-bloc-content">
 	            			<input className="inputs" type="text" placeholder="Post title"/>
 	            			<textarea className="inputs" placeholder="Description"/>
+	            			<div>
+		            			<label className="input-label">Content</label>
+		            			<textarea className="rich-text"/>
+	            			</div>
+	            			<div>
+		            			<label className="input-label">Cover</label>
+		            			<UploadInput/>
+	            			</div>
+
 	            		</div>
 	            	</div>
 	            	<div className="form-bloc">
