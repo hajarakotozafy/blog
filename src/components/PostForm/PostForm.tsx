@@ -45,9 +45,9 @@ const PostForm:FC = () => {
 	            			<input className="inputs" type="text" placeholder="Meta keywords"/>
 	            		</div>
 	            		<div className="switch-btn form-bloc-two">
-							<input type="checkbox" hidden="hidden" id="isPublish" defaultChecked/>
-							<label className="switch" for="isPublish"></label>
-							<span>Publish</span>
+							<input type="checkbox" hidden="hidden" id="isEnableComments" defaultChecked/>
+							<label className="switch" for="isEnableComments"></label>
+							<span>Enable comments</span>
 	            		</div>
 	            	</div>
 	            	
