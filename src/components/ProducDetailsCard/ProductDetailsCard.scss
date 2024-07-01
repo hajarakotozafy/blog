@@ -1,3 +1,4 @@
+@use '../../styles/abstracts' as *;
 .p-card-container{
     display: flex;
     flex-direction: column;
@@ -16,6 +17,9 @@
             font-size: 16px;
             font-weight: 600;
             margin-bottom: 8px;
+            @include themed {
+                color: t('text-black');
+            }
         }
     }
     .text{
@@ -25,6 +29,9 @@
             font-weight: 400;
             line-height: 22px;
             text-align: center;
+            @include themed {
+                color: t('text-gray');
+            }
         }
     }
 }
