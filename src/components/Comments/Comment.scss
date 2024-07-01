@@ -1,4 +1,7 @@
+@use '../../styles/abstracts' as *;
+
 .comment-container{
+    margin-bottom: 80px;
     .comment-bloc{
         padding: 24px 0;
         border-bottom: 1px solid rgba(145, 158, 171, 0.2);
@@ -22,6 +25,11 @@
     }
     .reply{
         margin-left: 52px;
+    }
+    .reply-btn{
+        @include themed {
+            color: t('text-gray');
+        }
     }
     .sender{
         display: flex;
@@ -49,6 +57,9 @@
             .name{
                 font-size: 14px;
                 font-weight: 600;
+                @include themed {
+                    color: t('text-black');
+                }
             }
             .date{
                 font-size: 12px;
@@ -63,5 +74,8 @@
         font-weight: 400;
         line-height: 22px;
         margin-top: 8px;
+        @include themed {
+            color: t('text-black');
+        }
     }
 }
