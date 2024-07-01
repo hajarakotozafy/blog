@@ -49,8 +49,10 @@ const App: FC = () => {
               <Route path='/blog/list' element={<BlogList/>} />
               <Route path='/blog/details' element={<BlogArticleDetails/>} />
               <Route path='/product/details' element={<ProductDetails/>} />
-              <Route path='/blog/post/create' element={<PostForm/>} />
-              <Route path='/blog/post/edit' element={<PostForm/>} />
+              { role.isAdmin && <>
+                  <Route path='/blog/post/create' element={<PostForm/>} />
+                  <Route path='/blog/post/edit' element={<PostForm/>} />
+              </>}
               
           </Routes>
           { !role.isAdmin && <Footer/> }
