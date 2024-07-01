@@ -1,12 +1,19 @@
+@use '../../styles/abstracts' as *;
+
 .orderednav-container{
     display: flex;
     align-items: center;
     column-gap: 16px;
     p{
         font-size: 14px;
-        cursor: pointer;    
+        cursor: pointer;  
+        @include themed {
+            color: t('text-black');
+        }  
         &:last-child{
-            color: rgba(145, 158, 171, 1);
+            @include themed {
+                color: t('text-gray');
+            }
         }
     }
     .dot{

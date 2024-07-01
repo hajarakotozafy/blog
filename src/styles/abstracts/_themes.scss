@@ -22,7 +22,8 @@ $article-card-bg-light: #ffffff;
 $article-card-bg-dark: rgba(28,37,46,1);
 $article-card-border-light: 1px solid rgba(145, 158, 171, 0.2);
 $article-card-border-dark: 1px solid rgba(28,37,46,1);
-
+$status-filter-active-border-bottom-blog-list-light: 2px solid rgba(28,37,46,1);
+$status-filter-active-border-bottom-blog-list-dark: 2px solid #fff;
 $themes: (
 	dark: (
 		background-color: $body-background-dark,
@@ -33,7 +34,8 @@ $themes: (
 		primary-btn-text: $primary-btn-dark-text,
 		article-card-shadow: $article-card-shadow-dark,
 		article-card-bg: $article-card-bg-dark,
-		article-card-border: $article-card-border-dark
+		article-card-border: $article-card-border-dark,
+		status-filter-active-border-bottom-blog-list: $status-filter-active-border-bottom-blog-list-dark,
 	),
 	light: (
 		background-color: $body-background-light,
@@ -45,6 +47,7 @@ $themes: (
 		article-card-shadow: $article-card-shadow-light,
 		article-card-bg: $article-card-shadow-light,
 		article-card-border: $article-card-border-light,
+		status-filter-active-border-bottom-blog-list: $status-filter-active-border-bottom-blog-list-light,
 	),
 );
 
