@@ -44,11 +44,20 @@ const PostForm:FC = () => {
 	            			<textarea className="inputs" placeholder="Meta description"/>
 	            			<input className="inputs" type="text" placeholder="Meta keywords"/>
 	            		</div>
+	            		<div className="switch-btn form-bloc-two">
+							<input type="checkbox" hidden="hidden" id="isPublish" defaultChecked/>
+							<label className="switch" for="isPublish"></label>
+							<span>Publish</span>
+	            		</div>
 	            	</div>
 	            	
 
 	            	<div className="submit-buttons">
-	            		<div className="switch-btn"></div>
+	            		<div className="switch-btn">
+							<input type="checkbox" hidden="hidden" id="isPublish" defaultChecked/>
+							<label className="switch" for="isPublish"></label>
+							<span>Publish</span>
+	            		</div>
 	            		<div className="btns">
 	            			<Button color="white">
 		                        <span>Preview</span>
