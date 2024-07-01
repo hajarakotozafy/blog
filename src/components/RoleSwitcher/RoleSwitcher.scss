@@ -8,7 +8,7 @@
 	padding: 16px 24px;
 	border-radius: 12px;
 	@include themed {
-		background: t('background-color');
+		background: t('article-card-bg');
 	}
 	z-index: 99999999999;
 	form{
@@ -22,7 +22,7 @@
 				background-color : transparent;
 				cursor: pointer;
 				@include themed {
-					color: t('text');
+					color: t('text-gray');
 				}
 			}
 		}
