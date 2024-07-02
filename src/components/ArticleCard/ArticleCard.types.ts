@@ -7,6 +7,6 @@ export type ArticleCardPropsType = {
     shares: Number,
     cover: any,
     avatar: any
-    isFullCover: boolean,
-    isLargeImage: boolean,
+    isFullCover?: boolean,
+    isLargeImage?: boolean,
   };

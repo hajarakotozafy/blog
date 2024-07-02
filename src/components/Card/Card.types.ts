@@ -3,10 +3,10 @@ export type CardPropsType = {
     children?: React.ReactNode;
     color?: "primary" | "secondary";
     disabled?: boolean;
-    status: String,
+    status?: String,
     date: String,
     title: String,
-    text: String,
+    text?: String,
     comments: Number,
     views: Number,
     shares: Number,
