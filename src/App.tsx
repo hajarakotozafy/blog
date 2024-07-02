@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import './App.scss';
-
+import "./styles/styles.scss";
 import { useEffect, useReducer } from "react";
 import { Route, Routes } from 'react-router-dom';
 
@@ -14,7 +14,7 @@ import ProductDetails from './pages/ProductDetails/ProductDetails';
 import Blog from "./pages/Blog/Blog";
 import BlogArticleDetails from './pages/BlogArticleDetails/BlogArticleDetails';
 import RoleSwitcher from "./components/RoleSwitcher/RoleSwitcher";
-
+import PostForm from "./components/PostForm/PostForm";
 
 // initial value of role: Admin
 const initialRole = {
@@ -49,6 +49,11 @@ const App: FC = () => {
               <Route path='/blog/list' element={<BlogList/>} />
               <Route path='/blog/details/:id' element={<BlogArticleDetails/>} />
               <Route path='/product/details' element={<ProductDetails/>} />
+              { role.isAdmin && <>
+                  <Route path='/blog/post/create' element={<PostForm/>} />
+                  <Route path='/blog/post/edit' element={<PostForm/>} />
+              </>}
+              
           </Routes>
           { !role.isAdmin && <Footer/> }
         </div> 

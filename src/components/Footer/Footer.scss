@@ -1,7 +1,11 @@
+@use '../../styles/abstracts' as *;
 .footer-container{
     padding: 80px 0;
     display: flex;
     justify-content: center;
+    @include themed {
+        color: t('text-black');
+    }
     .footer-inner{
         max-width: 1200px;
         padding: 0 24px;

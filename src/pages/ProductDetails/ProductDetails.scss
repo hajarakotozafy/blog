@@ -1,3 +1,5 @@
+@use '../../styles/abstracts' as *;
+
 .product-details-container{
     display: flex;
     align-items: center;
@@ -14,11 +16,19 @@
             .back-btn{
                 display: flex;
                 align-items: center;
+                @include themed {
+                    color: t('text-black');
+                }
             }
             span{
                 color: rgba(28, 37, 46, 1);
                 font-size: 14px;
                 font-weight: 600;
+                svg{
+                    @include themed {
+                        color: t('text-gray');
+                    }
+                }
             }
             display: flex;
             justify-content: space-between;
@@ -108,6 +118,9 @@
                     font-size: 20px;
                     font-weight: 700;
                     margin-bottom: 16px;
+                    @include themed {
+                        color: t('text-black');
+                    }
                 }
                 .review{
                     display: flex;
@@ -132,6 +145,9 @@
                     p{
                         font-size: 20px;
                         font-weight: 700;
+                        @include themed {
+                            color: t('text-black');
+                        }
                     }
                 }
                 .description{
@@ -140,6 +156,9 @@
                     color: rgba(99, 115, 129, 1);
                     line-height: 22px;
                     margin-bottom: 23px;
+                    @include themed {
+                        color: t('text-gray');
+                    }
                 }
                 .separator{
                     width: 100%;
@@ -148,6 +167,9 @@
                     margin-bottom: 23px;
                 }
                 .other-details{
+                    @include themed {
+                        color: t('text-black');
+                    }
                     div{
                         display: flex;
                         justify-content: space-between;
@@ -243,13 +265,17 @@
                         align-items: center;
                         cursor: pointer;
                         svg{
-                            color: rgba(99, 115, 129, 1);
+                            @include themed {
+                                color: t('text-gray');
+                            }
                         }
                         span{
                             font-size: 14px;
                             font-weight: 600;
                             margin-left: 8px;
-                            color: rgba(99, 115, 129, 1);
+                            @include themed {
+                                color: t('text-gray');
+                            }
                         }
                     }
                 }

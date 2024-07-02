@@ -23,11 +23,11 @@ export const SideBarData = [
             },
             {
                 name: 'Create',
-                url: '/blog/create'
+                url: '/blog/post/create'
             },
             {
                 name: 'Edit',
-                url: '/blog/edit'
+                url: '/blog/post/edit'
             }
         ]
     },

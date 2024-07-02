@@ -1,5 +1,11 @@
+@use '../../styles/abstracts' as *;
+
 .article-card-container{
-    box-shadow: 0px 12px 24px -4px rgba(145, 158, 171, 0.12);
+    @include themed {
+        box-shadow: t('article-card-shadow');
+        background: t('article-card-bg');
+        border: t('article-card-border');
+    }
     border: 1px solid rgba(145, 158, 171, 0.2);
     border-radius: 16px;
     position: relative;
@@ -31,7 +37,9 @@
                 font-weight: 600;
                 font-family: Public Sans;
                 line-height: 22px;
-                color: rgba(28, 37, 46, 1);           
+                @include themed {
+                    color: t('text-black');
+                }         
                 overflow: hidden;            
                 text-overflow: ellipsis;     
                 display: -webkit-box;        
@@ -82,7 +90,9 @@
         }
     }
     .avatar{
-        background: #fff;
+        @include themed {
+            background: t('article-card-bg');
+        }
         padding: 4px;
         position: absolute;
         top: 202px;
@@ -100,9 +110,6 @@
             border-radius: 40px;
         }
     }
-    // background-size: cover;
-    // background-position: center;
-    // background-repeat: no-repeat;
     &.isFullCover{
         height: 360px;
         .cover{

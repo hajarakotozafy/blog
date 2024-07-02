@@ -1,0 +1,77 @@
+@use 'sass:map';
+
+$dark: #171717;
+$light: #e5e5e5;
+$body-background-dark: rgba(20, 26, 33, 1);
+$body-background-light: #ffffff;
+$text-gray-light: rgba(99, 115, 129, 1);
+$text-gray-dark: rgba(145, 158, 171, 1);
+$text-black-light: rgba(28, 37, 46, 1);
+$text-black-dark: rgba(255, 255, 255, 1);
+$nav-shadow-light: 0px 8px 16px 0px rgba(145, 158, 171, 0.16);
+$nav-shadow-dark: '';
+
+$primary-btn-light-bg: #212B36;
+$primary-btn-light-text: #ffffff;
+$primary-btn-dark-bg: #ffffff;
+$primary-btn-dark-text: rgba(28, 37, 46, 1);
+
+$article-card-shadow-light: 0px 12px 24px -4px rgba(145, 158, 171, 0.12);
+$article-card-shadow-dark: 0px 12px 24px -4px rgba(0, 0, 0, 0.12);
+$article-card-bg-light: #ffffff;
+$article-card-bg-dark: rgba(28,37,46,1);
+$article-card-border-light: 1px solid rgba(145, 158, 171, 0.2);
+$article-card-border-dark: 1px solid rgba(28,37,46,1);
+$status-filter-active-border-bottom-blog-list-light: 2px solid rgba(28,37,46,1);
+$status-filter-active-border-bottom-blog-list-dark: 2px solid #fff;
+$themes: (
+	dark: (
+		background-color: $body-background-dark,
+		text-gray: $text-gray-dark,
+		text-black: $text-black-dark,
+		nav-shadow: $nav-shadow-dark,
+		primary-btn-bg: $primary-btn-dark-bg,
+		primary-btn-text: $primary-btn-dark-text,
+		article-card-shadow: $article-card-shadow-dark,
+		article-card-bg: $article-card-bg-dark,
+		article-card-border: $article-card-border-dark,
+		status-filter-active-border-bottom-blog-list: $status-filter-active-border-bottom-blog-list-dark,
+	),
+	light: (
+		background-color: $body-background-light,
+		text-gray: $text-gray-light,
+		text-black: $text-black-light,
+		nav-shadow: $nav-shadow-light,
+		primary-btn-bg: $primary-btn-light-bg,
+		primary-btn-text: $primary-btn-light-text,
+		article-card-shadow: $article-card-shadow-light,
+		article-card-bg: $article-card-shadow-light,
+		article-card-border: $article-card-border-light,
+		status-filter-active-border-bottom-blog-list: $status-filter-active-border-bottom-blog-list-light,
+	),
+);
+
+@mixin themed {
+	@each $theme, $map in $themes {
+		.theme--#{$theme} & {
+			$theme-map: () !global;
+
+			@each $key, $submap in $map {
+				$value: map.get($map, $key);
+				$theme-map: map.merge(
+					$theme-map,
+					(
+						$key: $value,
+					)
+				) !global;
+			}
+			@content;
+
+			$theme-map: null !global;
+		}
+	}
+}
+
+@function t($key) {
+	@return map-get($theme-map, $key);
+}

@@ -1,3 +1,4 @@
+@use '../../styles/abstracts' as *;
 .blog-list-container{
     display: flex;
     align-items: center;
@@ -18,7 +19,9 @@
                 font-size: 24px;
                 font-weight: 700;
                 line-height: 36px;
-                color: rgba(28, 37, 46, 1);
+                @include themed {
+                    color: t('text-black');
+                }
             }
         }
 
@@ -40,10 +43,18 @@
                     outline: none;
                     background: transparent;
                 }
+                svg{
+                    @include themed {
+                        color: t('text-gray');
+                    }
+                }
             }
             .filter-button{
                 display: flex;
                 column-gap: 8px;
+                @include themed {
+                    color: t('text-black');
+                }
                 p{
                     font-weight: 600;
                     font-size: 14px;
@@ -73,33 +84,46 @@
             display: flex;
             column-gap: 40px;
             .all{
-                border-bottom: 2px solid rgba(28, 37, 46, 1);
+                @include themed{
+                    border-bottom: t('status-filter-active-border-bottom-blog-list');
+                    color: t('text-black');
+                }
                 span{
                     &:nth-child(2){
-                        background-color: rgba(28, 37, 46, 1);
-                        color: #fff;
+                        @include themed {
+                            background-color: t('primary-btn-bg');
+                            color: t('primary-btn-text');
+                        }
                     }
                 }
             }
             .published{
                 span{
                     &:nth-child(1){
-                        color: rgba(99, 115, 129, 1);
+                        @include themed {
+                            color: t('text-gray');
+                        }
                     }
                     &:nth-child(2){
                         background-color: rgba(0, 184, 217, 0.16);
-                        color: rgba(0, 108, 156, 1);
+                        @include themed {
+                            color: t('text-gray');
+                        }
                     }
                 }
             }
             .draft{
                 span{
                     &:nth-child(1){
-                        color: rgba(99, 115, 129, 1);
+                        @include themed {
+                            color: t('text-gray');
+                        }
                     }
                     &:nth-child(2){
                         background-color: rgba(145, 158, 171, 0.16);
-                        color: rgba(99, 115, 129, 1);
+                        @include themed {
+                            color: t('text-gray');
+                        }
                     }
                 }
             }

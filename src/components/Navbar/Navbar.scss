@@ -1,3 +1,4 @@
+@use '../../styles/abstracts' as *;
 .dashboardnav-container{
     display: flex;
     align-items: center;
@@ -7,9 +8,13 @@
     padding-right: 40px;
     position: sticky;
     top: 0;
-    background: #fff;
+    @include themed {
+        background: t('background-color');
+    }
     z-index: 9999;
-    box-shadow: 0px 8px 16px 0px rgba(145, 158, 171, 0.16);
+    @include themed {
+        box-shadow: t('nav-shadow');
+    }
     width: 100%;
     .search-bar{
         padding: 8px 10px 8px 8px;
@@ -74,11 +79,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 8px 16px 0px rgba(145, 158, 171, 0.16);
+    @include themed {
+        box-shadow: t('nav-shadow');
+    }
     position: sticky;
     top: 0;
     z-index: 999;
-    background-color: #ffffff;
+    @include themed {
+        background: t('background-color');
+    }
     padding: 0 16px;
     .user-nav-inner{
         max-width: 1152px;
@@ -100,11 +109,18 @@
             a{
                 font-size: 14px;
                 font-weight: 500;
-                color: rgba(28, 37, 46, 1);
+                @include themed {
+                    color: t('text-black');
+                }
                 text-decoration: none;
             }
-            .settings-btn{
-                cursor:pointer;
+            .nav-settings-btn{
+                display: flex;
+                align-items: center;
+                column-gap: 16px;
+                img{
+                    cursor: pointer;
+                }
             }
         }
     }
@@ -118,7 +134,9 @@
             cursor: pointer;
             svg{
                 font-size: 20px;
-                color: rgba(99, 115, 129, 1);
+                @include themed {
+                    color: t('text-gray');
+                }
             }
         }
 
@@ -130,7 +148,9 @@
             right: 0;
             width: 100%;
             height: 100vh;
-            background: #fff;
+            @include themed {
+                background: t('background-color');
+            }
             flex-direction: column;
             justify-content: flex-start;
             padding: 16px;

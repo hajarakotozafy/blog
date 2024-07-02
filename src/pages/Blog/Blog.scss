@@ -1,3 +1,5 @@
+@use '../../styles/abstracts' as *;
+
 .blog-container{
         display: flex;
         align-items: center;
@@ -17,7 +19,9 @@
                     font-size: 24px;
                     font-weight: 700;
                     line-height: 36px;
-                    color: rgba(28, 37, 46, 1);
+                    @include themed {
+                        color: t('text-black');
+                    }
                 }
             }
     
@@ -33,16 +37,27 @@
                     border-radius: 8px;
                     padding: 0 8px;
                     column-gap: 8px;
+                    
+
                     input{
                         border: none;
                         outline: none;
                         background: transparent;
                     }
+                    svg{
+                        @include themed {
+                            color: t('text-gray');
+                        }
+                    }
+
                 }
                 .filter-button{
                     display: flex;
                     column-gap: 8px;
                     cursor: pointer;
+                    @include themed {
+                        color: t('text-black');
+                    }
                     p{
                         font-weight: 600;
                         font-size: 14px;

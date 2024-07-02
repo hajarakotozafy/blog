@@ -16,8 +16,11 @@ const ArticleCard = ({
     cover,
     avatar
 }: ArticleCardPropsType) => {
+    const bgStyle = {
+        background: `url(${cover}) center center/cover no-repeat`
+    }
     return(
-        <div className={`article-card-container ${isFullCover?'isFullCover':''} ${isLargeImage?'isLargeImage':''}`} style={{background: isFullCover?`url(${cover}) center center/cover no-repeat`:'#fff'}}>
+        <div className={`article-card-container ${isFullCover?'isFullCover':''} ${isLargeImage?'isLargeImage':''}`} style={isFullCover?bgStyle:{}}>
             <div className="cover"><img src={cover}/></div>
             <div className="avatar"><img src={avatar}/></div>
             <div className="info">
