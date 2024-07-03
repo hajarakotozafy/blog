@@ -5,6 +5,7 @@ import { FaCommentDots } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
 import { FaShareAlt } from "react-icons/fa";
 import { MdMoreHoriz } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Card = ({
     status,
@@ -15,8 +16,11 @@ const Card = ({
     views,
     shares,
     cover,
-    avatar
+    avatar,
+    id
 }: CardPropsType) => {
+
+
     return(
         <div className="card-container">
             <div className="info">
@@ -25,7 +29,11 @@ const Card = ({
                     <p>{date}</p>
                 </div>
                 <div className="card-content">
-                    <h3>{title}</h3>
+                    <h3>
+                        <Link to={`/blog/details/${id}`}>
+                            {title}
+                        </Link>
+                    </h3>
                     <p>{text}</p>
                 </div>
                 <div className="card-footer">
