@@ -33,6 +33,15 @@
             flex-direction: column;
             margin-bottom: 30px;
             h3{
+                a{
+                    color: inherit;
+                    text-decoration: none;
+                }
+                a:hover {
+                    color:#515353; 
+                    text-decoration:none; 
+                    cursor:pointer;  
+                }
                 font-size: 14px;
                 font-weight: 600;
                 font-family: Public Sans;

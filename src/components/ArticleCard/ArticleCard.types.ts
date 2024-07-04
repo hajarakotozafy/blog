@@ -9,4 +9,5 @@ export type ArticleCardPropsType = {
     avatar: any
     isFullCover?: boolean,
     isLargeImage?: boolean,
+    id: number
   };

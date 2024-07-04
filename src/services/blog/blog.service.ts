@@ -28,7 +28,9 @@ class BlogService {
   public async getArticleById(id: number) {
     await this.wait(500);
     const res = await fetch(`http://localhost:5173/data/blog.data.json`);
-    return res.json();
+    const data = (await res.json()) as ArticleModel[];
+    const article = data.find((blog) => blog.id === id);
+    return article as ArticleModel;
   }
 
   // public async postArticle(blog: ArticleModel) {

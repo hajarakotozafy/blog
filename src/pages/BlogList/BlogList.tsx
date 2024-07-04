@@ -1,4 +1,4 @@
-import { FC, useCallback, useMemo, useRef } from "react";
+import { FC } from "react";
 import "./BlogList.scss";
 import Button from "../../components/Button/Button";
 import { FaPlus } from "react-icons/fa";
@@ -7,41 +7,12 @@ import { IoIosArrowDown } from "react-icons/io";
 import OrderedNav from "../../components/OrderedNav/OrderedNav";
 import SearchIcon from "../../assets/images/search-icon.png";
 import Card from "../../components/Card/Card";
-import blogService from "../../services/blog/blog.service";
-import { useInfiniteQuery } from "@tanstack/react-query";
+
 import { BiLoaderCircle } from "react-icons/bi";
+import { useInfiniteScroll } from "../../hooks/useInfiniteScrool";
 
 const BlogList: FC = () => {
-  const { data, fetchNextPage, hasNextPage, isFetching, isLoading } =
-    useInfiniteQuery({
-      queryKey: ["articles"],
-      queryFn: ({ pageParam }) => {
-        return blogService.getArticles({ page: pageParam });
-      },
-      initialPageParam: 1,
-      getNextPageParam: (lastPage) => lastPage.offset,
-    });
-
-  const handleObserver = useRef<IntersectionObserver>();
-
-  const lastElement = useCallback(
-    (element: HTMLDivElement) => {
-      if (isLoading) return;
-      if (handleObserver.current) handleObserver?.current?.disconnect();
-      handleObserver.current = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting && hasNextPage && !isFetching) {
-          console.log("fetchNextPage");
-          fetchNextPage();
-        }
-      });
-      if (element) handleObserver.current.observe(element);
-    },
-    [isLoading, hasNextPage]
-  );
-  const articles = useMemo(
-    () => (data ? data?.pages.flatMap((item) => item.results) : []),
-    [data]
-  );
+  const { articles, lastElement, isFetching } = useInfiniteScroll();
 
   return (
     <div className="blog-list-container">
